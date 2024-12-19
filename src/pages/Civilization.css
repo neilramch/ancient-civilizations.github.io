@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Walter+Turncoat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Walter+Turncoat&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.civilization-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100svw;
+    background-color: white;
+
+}
+
+img {
+    transform: scale(80%);
+    width: 100svw;
+    border-radius: 20px;
+    margin: 0;
+}
+
+h1{
+    color: black;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+    text-align: center;
+    font-size: 4.5em;
+    padding: 0;
+    margin: 0;
+}
+
+P {
+    color: black;
+    font-size: 1.5em;
+    padding: 1em;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+}
+
+ul {
+    padding-bottom: 2em;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+}
+
+li {
+    color: black;
+    font-size: 1.5em;
+    font-optical-sizing: auto;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+       "wdth" 100,
+       "YTLC" 500;
+}
