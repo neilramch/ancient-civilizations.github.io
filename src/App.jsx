@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-do
 import Home from "./pages/Home";
 import Civilization from "./pages/Civilization";
 import "./App.css";
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
   const civilizationEras = {
@@ -42,6 +43,7 @@ const App = () => {
         <img width="100" height="100" src="https://img.icons8.com/quill/100/pyramids.png" alt="pyramids" />
       </div>
       <Router basename="/ancient-civilizations.github.io">
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:civilizationName" element={<Civilization />} />
