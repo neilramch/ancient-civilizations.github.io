@@ -41,7 +41,7 @@ const App = () => {
         <h1>Ancient Civilizations</h1>
         <img width="100" height="100" src="https://img.icons8.com/quill/100/pyramids.png" alt="pyramids" />
       </div>
-      <Router>
+      <Router basename="/ancient-civilizations.github.io">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:civilizationName" element={<Civilization />} />
