@@ -39,9 +39,8 @@ const App = () => {
   return (
     <>
       <div className="header">
-        <h1>Ancient Civilizations</h1>
-        <img width="100" height="100" src="https://img.icons8.com/quill/100/pyramids.png" alt="pyramids" />
-      </div>
+      <img src="./Histopedia-2.png" className="header-logo" />
+    </div>
       <Router basename="/ancient-civilizations.github.io">
       <ScrollToTop />
         <Routes>

@@ -2,6 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Walter+Turncoat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Walter+Turncoat&display=swap');
 
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
 #root {
   background-color: #ffffff;
   color: white;
@@ -12,26 +24,27 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: min-content;
-  width: 100svw;
-  border: #334355 1px solid;
-  margin-bottom: 25px;
+  justify-content: center; /* Center align the content */
+  width: 100%; /* Full width */
+  height: auto; /* Automatically adjust height to fit content */
+  background-color: #ffffff; /* Fallback background color */
 }
 
-.header img {
-  height: 120px;
-  width: 130px;
+.header-logo {
+  max-height: 150px; /* Limit the height to prevent distortion */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the image fits inside the container */
+  scale: 3;
 }
 
-.header h1 {
+.header-title {
   font-family: "Nunito Sans", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings:
-       "wdth" 100,
-       "YTLC" 500;
+  font-weight: 300;
+  font-size: 2rem; /* Base font size */
+  color: #334355;
+  white-space: nowrap; /* Prevents wrapping of the title */
 }
+
 
 .tile-container {
   display: flex;
@@ -39,7 +52,6 @@
   justify-content: center;
   padding: 20px;
   background-color: #ffffff; /* Light background color */
-  border: 1px solid #ddd; /* Optional border for the nav */
   border-radius: 8px; /* Rounded corners */
   margin: 0 auto;
   gap: 5px; /* Space between tiles */
@@ -54,13 +66,16 @@
 
 
 .tile-container .tile-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 15px;
   background-color: #bccfe4; /* tile color */
   color: rgb(27, 26, 15);
   border-radius: 8px; /* Rounded tiles */
   transition: transform 0.3s, background-color 0.3s;
   width: 120px;
+  height: 80px;
 }
 
 .tile-content:hover {
@@ -94,32 +109,29 @@ nav .tile {
 }
 
 @media (max-width: 768px) {
-  .header {
-    flex-direction: row; 
-    padding: 10px;
-    height: 5svh;
-  }
-
-  .header img {
-    height: 40px;
-    width: 50px;
-  }
-
-  .header h1 {
-    font-size: 20px;
-  }
-
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column; /* Stack logo and text vertically */
+    }
+  
+    .header-logo {
+      max-height: 100px; /* Scale down for small screens */
+      width: 80%; /* Adjust width within container */
+    }
+  }  
+  
   .tile-container {
     gap: 10px; /* Adjust gap between tiles */
     padding: 10px;
+    width: 100%;
   }
 
   .tile-container .tile-content {
+    flex: 1 0 90%; /* Reduce width slightly on smaller screens */
     width: 100%; /* Full width on smaller screens */
     padding: 10px;
     font-size: 14px; /* Slightly smaller font */
   }
-
 
   .era-container {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust columns for small screens */
