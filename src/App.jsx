@@ -11,7 +11,7 @@ const App = () => {
       "Sumer",
       "IndusValley",
       "Egypt",
-      "Akkad",
+      "Akkad", 
       "Babylonia",
       "Hittites",
     ],
@@ -40,8 +40,8 @@ const App = () => {
     <>
       <div className="header">
       <img src="./Histopedia-2.png" className="header-logo" />
-    </div>
-      <Router basename="/ancient-civilizations.github.io">
+    </div>a
+      <Router basename="/">
       <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />

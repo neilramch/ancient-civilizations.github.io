@@ -14,7 +14,7 @@ const Civilization = () => {
        listitem3: "The Golden Age Under Naram-Sin (2254–2218 BCE)",
        listitem4: "Decline and Fall (After 2218 BCE)",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Empire_akkad.svg/1280px-Empire_akkad.svg.png",
-      iframeSrc: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1atnhW508XGm3HBtbqwdLDlsB3UnHO0pIdxjYM-faN-E&font=Default&lang=en&timenav_position=top&initial_zoom=2&height=650",
+      iframeSrc: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1atnhW508XGm3HBtbqwdLDlsB3UnHO0pIdxjYM-faN-E&font=Default&lang=en&initial_zoom=2&height=650",
     },
     Assyria: {
       description: "Assyria was a major Mesopotamian East Semitic kingdom known for its military innovations and administrative efficiency.",
