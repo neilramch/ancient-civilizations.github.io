@@ -1,0 +1,22 @@
+
+@font-face {
+    font-family: 'Porcelain';
+    src: url('./Porcelain.ttf') format('truetype');
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    width: 100svw;
+}
+
+h1 {
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
