@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Civilization from "./pages/Civilization";
 import "./App.css";
 import ScrollToTop from "./ScrollToTop";
+import Header from "./components/Header";
 
 const App = () => {
   const civilizationEras = {
@@ -38,9 +39,7 @@ const App = () => {
 
   return (
     <>
-      <div className="header">
-      <img src="./Histopedia-2.png" className="header-logo" />
-    </div>a
+      <Header></Header>
       <Router basename="/">
       <ScrollToTop />
         <Routes>

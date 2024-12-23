@@ -21,40 +21,14 @@ html, body {
   margin: 0;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Center align the content */
-  width: 100%; /* Full width */
-  height: auto; /* Automatically adjust height to fit content */
-  background-color: #ffffff; /* Fallback background color */
-}
-
-.header-logo {
-  max-height: 150px; /* Limit the height to prevent distortion */
-  width: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensure the image fits inside the container */
-  scale: 3;
-}
-
-.header-title {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 300;
-  font-size: 2rem; /* Base font size */
-  color: #334355;
-  white-space: nowrap; /* Prevents wrapping of the title */
-}
-
 
 .tile-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 20px;
   background-color: #ffffff; /* Light background color */
   border-radius: 8px; /* Rounded corners */
   margin: 0 auto;
-  gap: 5px; /* Space between tiles */
   list-style: none;
   font-family: "Nunito Sans", sans-serif;
     font-weight: 200;
@@ -70,16 +44,17 @@ html, body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #bccfe4; /* tile color */
+  background-color: #f7f3f3;
   color: rgb(27, 26, 15);
-  border-radius: 8px; /* Rounded tiles */
+  border: rgb(212, 207, 207) solid 1px;
+  border-radius: 5px; /* Rounded tiles */
   transition: transform 0.3s, background-color 0.3s;
-  width: 120px;
-  height: 80px;
+  width: 10em;
+  height: 5em;
 }
 
 .tile-content:hover {
-  background-color: #4d647d; /* color  on hover */
+  background-color: #d6e5f2; /* color  on hover */
   transform: scale(1.05); /* Slight zoom effect */
 }
 
@@ -103,9 +78,7 @@ nav .tile {
 
 .era-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 }
 
 @media (max-width: 768px) {
@@ -140,4 +113,10 @@ nav .tile {
   .era-title {
     font-size: 16px;
   }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+
 }
