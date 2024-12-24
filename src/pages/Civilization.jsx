@@ -243,6 +243,10 @@ const Civilization = () => {
     return name.replace(/([A-Z])/g, " $1").trim(); // Inserts space before uppercase letters
   };
 
+  const getWikipediaUrl = (name) => {
+    return `https://en.wikipedia.org/wiki/${name.replace(/ /g, "_")}`;
+  };
+
   return (
     <div className="civilization-section">
       {civilization.iframeSrc ? (
@@ -270,7 +274,19 @@ const Civilization = () => {
           <li key={index}>{item}</li> // Dynamically render each list item
         ))}
       </ul>
-      
+    
+      <div className="wikilink">
+        <p>
+          Learn more on Wikipedia:{" "}
+          <a
+            href={getWikipediaUrl(formatCivilizationName(civilizationName))}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {formatCivilizationName(civilizationName)}
+          </a>
+        </p>
+      </div>
     </div>
   );
 };

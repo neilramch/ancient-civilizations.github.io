@@ -29,6 +29,7 @@ html, body {
   background-color: #ffffff; /* Light background color */
   border-radius: 8px; /* Rounded corners */
   margin: 0 auto;
+  margin-bottom: 4svh;
   list-style: none;
   font-family: "Nunito Sans", sans-serif;
     font-weight: 200;
@@ -51,6 +52,7 @@ html, body {
   transition: transform 0.3s, background-color 0.3s;
   width: 10em;
   height: 5em;
+
 }
 
 .tile-content:hover {
@@ -79,9 +81,11 @@ nav .tile {
 .era-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+  gap: 10px;
+
 }
 
-@media (max-width: 768px) {
+
   @media (max-width: 768px) {
     .header {
       flex-direction: column; /* Stack logo and text vertically */
@@ -91,32 +95,29 @@ nav .tile {
       max-height: 100px; /* Scale down for small screens */
       width: 80%; /* Adjust width within container */
     }
-  }  
   
-  .tile-container {
-    gap: 10px; /* Adjust gap between tiles */
-    padding: 10px;
-    width: 100%;
-  }
+    .tile-container {
+      padding: 10px;
+      width: 100%;
+    }
 
-  .tile-container .tile-content {
-    flex: 1 0 90%; /* Reduce width slightly on smaller screens */
-    width: 100%; /* Full width on smaller screens */
-    padding: 10px;
-    font-size: 14px; /* Slightly smaller font */
-  }
+    .tile-container .tile-content {
+      flex: 1 0 90%; /* Reduce width slightly on smaller screens */
+      width: 100%; /* Full width on smaller screens */
+      padding: 10px;
+      font-size: 14px; /* Slightly smaller font */
+    }
 
-  .era-container {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust columns for small screens */
-  }
+    .era-container {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust columns for small screens */
+    }
 
-  .era-title {
-    font-size: 16px;
-  }
+    .era-title {
+      font-size: 16px;
+    }
 
-  footer {
-    position: absolute;
-    bottom: 0;
+    footer {
+      position: absolute;
+      bottom: 0;
+    }
   }
-
-}

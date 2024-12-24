@@ -54,9 +54,6 @@ const App = () => {
               `tile ${isActive ? "active-link" : ""}`
             }
           >
-            <div className="tile-content">
-              <h3>Home</h3>
-            </div>
           </NavLink>
 
           {Object.entries(civilizationEras).map(([era, civilizations]) => (

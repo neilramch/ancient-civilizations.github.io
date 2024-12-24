@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Porcelain';
-    src: url('./Porcelain.ttf') format('truetype');
+    src: url('/Porcelain.ttf') format('truetype');
 }
 
 * {
@@ -13,6 +13,7 @@
     padding: 5px;
     display: flex;
     height: auto;
+    align-items: flex-start;
 
 }
 .header h1 {
@@ -37,4 +38,52 @@
 .header img {
     width: 13%;
     rotate: -90deg;
+}
+
+.header .home {
+    margin-left: auto;
+    height: auto;
+    width: auto;
+}
+
+.header .home svg {
+    width: 40px;
+    height: auto;
+    margin-top: 40%;
+    margin-right: 20px;
+}
+
+.header .home a {
+    opacity: 75%;
+}
+
+.header .home a:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) { 
+    .header {
+        flex-direction: row;
+        padding-top: 3svh;
+    }
+
+    .header img {
+        height: 80px;
+        width: auto;
+    }
+
+    .header h1 {
+        font-size: 2.4em;
+    }
+
+    .header h3 {
+        font-size: 8px;
+    }
+
+    .header .home svg {
+        width: 30px;
+        height: auto;
+     }
 }
