@@ -250,12 +250,16 @@ const Civilization = () => {
   return (
     <div className="civilization-section">
       <h1>{formatCivilizationName(civilizationName)}</h1>
-      <img
-        src={civilization.image}
-        alt={`${civilizationName}`}
-        className="civilization-image"
-      />
+      <div className="underline"></div>
+      <div className="civilization-summary">
         <p>{civilization.description}</p>
+        <img
+          src={civilization.image}
+          alt={`${civilizationName}`}
+          className="civilization-image"
+        />
+          
+        </div>
 
         <ul className="civilization-list">
         {listItems.map((item, index) => (

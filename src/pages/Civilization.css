@@ -12,30 +12,40 @@ body {
     height: 100%;
     width: 100svw;
     background-color: #f7f3f3;
-    ;
-
+    padding: 20px;
+    gap: 10px;
 }
 
-img {
-    transform: scale(80%);
-    width: 100svw;
-    border-radius: 20px;
+.civilization-section img {
+    max-height: 20svh;
+    max-width: 40svw;
+    border-radius: 10px;
     margin: 0;
+    align-self: flex-end;
 }
 
-h1{
+.civilization-section h1 {
     color: black;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-optical-sizing: auto;
-    font-weight: 700;
+    font-weight: 300;
     font-style: normal;
     font-variation-settings:
       "wdth" 100,
       "YTLC" 500;
     text-align: center;
-    font-size: 4.5em;
+    font-size: 2.5em;
     padding: 0;
     margin: 0;
+    align-self: flex-start;
+}
+
+.civilization-section .underline {
+    border: #dcd6d6 1px solid;
+}
+
+.civilization-section .civilization-summary {
+    display: flex;
 }
 
 P {

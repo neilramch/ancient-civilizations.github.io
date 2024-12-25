@@ -21,51 +21,82 @@ html, body {
   margin: 0;
 }
 
-
-.tile-container {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #ffffff; /* Light background color */
-  border-radius: 8px; /* Rounded corners */
-  margin: 0 auto;
-  margin-bottom: 4svh;
-  list-style: none;
-  font-family: "Nunito Sans", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    font-variation-settings:
-       "wdth" 100,
-       "YTLC" 500;
+@font-face {
+  font-family: 'Porcelain';
+  src: url('/Porcelain.ttf') format('truetype');
 }
 
+* {
+  box-sizing: 0;
+}
 
-.tile-container .tile-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.header {
+  width: 100svw;
   background-color: #f7f3f3;
-  color: rgb(27, 26, 15);
-  border: rgb(212, 207, 207) solid 1px;
-  border-radius: 5px; /* Rounded tiles */
-  transition: transform 0.3s, background-color 0.3s;
-  width: 10em;
-  height: 5em;
+  padding: 5px;
+  display: flex;
+  height: auto;
+
+}
+.header h1 {
+  font-family: 'Porcelain', sans-serif;
+  font-weight: 200;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.header h3 { 
+  font-family: Georgia, Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+  font-weight: 100;
+  font-size: .2em;
+  color: rgb(181, 53, 53);
+  margin: 0;
+  padding-left: 1.3em;
+}
+
+.header-text-container {
+  display: flex;
+  gap: 10px;
+  margin-right: auto;
+  margin-left: 1svw;
+}
+
+.header-text {
+  padding-top: 1.2em;
+}
+
+.header img {
+  max-width: 64px;
+  max-height: auto;
+  rotate: -90deg;
+  margin-top: 10px;
+  align-self: flex-start;
 
 }
 
-.tile-content:hover {
-  background-color: #d6e5f2; /* color  on hover */
-  transform: scale(1.05); /* Slight zoom effect */
+.header .home {
+  margin-left: auto;
+  height: auto;
+  width: auto;
 }
 
-nav .tile {
-  text-decoration: none;
-  color: inherit; /* Inherit color from parent */
-  font-weight: bold;
-  font-size: 16px;
+.header .home svg {
+  width: 32px;
+  height: auto;
+  margin-top: 40%;
+  margin-right: 20px;
 }
+
+.header .home a {
+  opacity: 75%;
+}
+
+.header .home a:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+
 
 .active-link {
   font-weight: bold;
@@ -85,12 +116,10 @@ nav .tile {
 
 }
 
-
-/* Dropdown Menu Container */
 .dropdown-menu {
   position: relative;
-  display: inline-block;
   margin: 20px;
+  margin-left: auto;
 }
 
 .menu-button {
@@ -107,6 +136,7 @@ nav .tile {
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Nunito Sans', sans-serif;
+
 }
 
 .menu-button svg {
@@ -118,7 +148,7 @@ nav .tile {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
@@ -133,30 +163,41 @@ nav .tile {
 
 /* Dropdown Items */
 .dropdown-item {
+  display: flex;
+  gap: 5px;
   padding: 10px 20px;
   cursor: pointer;
   font-family: 'Nunito Sans', sans-serif;
   color: black;
+  border: 1px solid rgb(243, 235, 235);
+
 
 }
 
+.dropdown-item img {
+  width: 32px;
+  height: 32px;
+  rotate: -90deg;
+}
+
 .dropdown-item:hover {
-  background-color: white;
+  background-color: rgb(243, 235, 235);
 }
 
 /* Submenu */
 .sub-menu {
   display: none;
   position: absolute;
-  top: 0;
-  left: 100%; /* Align submenu to the right */
+  top: 0; /* Aligns with the top of the parent menu item */
+  left: auto; /* Reset any existing "left" value */
+  right: 100%; /* Position submenu to the left */
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   border-radius: 5px;
   z-index: 200;
-  min-width: 200px;
-  color: black;
+  min-width: 200px; /* Ensure consistent width */
+  white-space: nowrap; /* Prevent items from wrapping */
 }
 
 .dropdown-item:hover .sub-menu {
@@ -171,20 +212,18 @@ nav .tile {
   text-decoration: none;
   color: black;
   font-family: 'Nunito Sans', sans-serif;
+  border: 1px solid rgb(243, 235, 235);
+
 }
 
 .sub-menu-item:hover {
-  background-color: #ffffff;
+  background-color: rgb(243, 235, 235);
 }
 
 .active-link {
   font-weight: bold;
   color: rgb(0, 7, 82);
 }
-
-
-
-
   @media (max-width: 768px) {
     .header {
       flex-direction: column; /* Stack logo and text vertically */
