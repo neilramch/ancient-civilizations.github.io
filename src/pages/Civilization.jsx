@@ -249,18 +249,6 @@ const Civilization = () => {
 
   return (
     <div className="civilization-section">
-      {civilization.iframeSrc ? (
-        <iframe
-          src={civilization.iframeSrc}
-          width="100%"
-          height="650"
-          frameBorder="0"
-          allowFullScreen
-          title={formatCivilizationName(civilizationName)}
-        ></iframe>
-      ) : (
-        <p>No timeline available for this civilization.</p>
-      )}
       <h1>{formatCivilizationName(civilizationName)}</h1>
       <img
         src={civilization.image}
@@ -287,6 +275,19 @@ const Civilization = () => {
           </a>
         </p>
       </div>
+
+      {civilization.iframeSrc ? (
+        <iframe
+          src={civilization.iframeSrc}
+          width="100%"
+          height="650"
+          frameBorder="0"
+          allowFullScreen
+          title={formatCivilizationName(civilizationName)}
+        ></iframe>
+      ) : (
+        <p>No timeline available for this civilization.</p>
+      )}
     </div>
   );
 };
