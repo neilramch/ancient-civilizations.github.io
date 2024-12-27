@@ -32,10 +32,11 @@ html, body {
 
 .header {
   width: 100svw;
-  background-color: #f7f3f3;
-  padding: 5px;
+  background-color: #f7f7f7;
+  padding: 10px;
   display: flex;
   height: auto;
+  border-radius: 10px;
 
 }
 .header h1 {
@@ -59,7 +60,8 @@ html, body {
   display: flex;
   gap: 10px;
   margin-right: auto;
-  margin-left: 1svw;
+  margin-left: 0;
+  padding: 5px;
 }
 
 .header-text {
@@ -69,32 +71,38 @@ html, body {
 .header img {
   max-width: 64px;
   max-height: auto;
-  rotate: -90deg;
   margin-top: 10px;
   align-self: flex-start;
-
 }
 
-.header .home {
-  margin-left: auto;
-  height: auto;
-  width: auto;
-}
-
-.header .home svg {
-  width: 32px;
-  height: auto;
-  margin-top: 40%;
-  margin-right: 20px;
-}
-
-.header .home a {
-  opacity: 75%;
-}
-
-.header .home a:hover {
-  opacity: 100%;
+.home {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px; 
   cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+
+}
+
+.home a img {
+  width: 32px;
+
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
 
@@ -126,21 +134,24 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 64px;
+  height: auto;
   gap: 10px;
-  background-color: #f7f3f3;
+  background-color: white;
   color: black;
   font-size: 1em;
   padding: 10px 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 5px; 
   cursor: pointer;
   font-family: 'Nunito Sans', sans-serif;
 
 }
 
-.menu-button svg {
+.menu-button img {
   width: 32px;
+  height: auto;
+  padding: 0;
+  margin: 0;
 }
 
 /* Dropdown Menu */
@@ -161,7 +172,6 @@ html, body {
   display: block; /* Show the dropdown menu on hover */
 }
 
-/* Dropdown Items */
 .dropdown-item {
   display: flex;
   gap: 5px;
@@ -170,8 +180,7 @@ html, body {
   font-family: 'Nunito Sans', sans-serif;
   color: black;
   border: 1px solid rgb(243, 235, 235);
-
-
+  
 }
 
 .dropdown-item img {
@@ -184,19 +193,17 @@ html, body {
   background-color: rgb(243, 235, 235);
 }
 
-/* Submenu */
 .sub-menu {
   display: none;
   position: absolute;
-  top: 0; /* Aligns with the top of the parent menu item */
-  left: auto; /* Reset any existing "left" value */
-  right: 100%; /* Position submenu to the left */
+  top: 0;
+  right: 100%;
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   border-radius: 5px;
   z-index: 200;
-  min-width: 200px; /* Ensure consistent width */
+  width: 200px; /* Ensure consistent width */
   white-space: nowrap; /* Prevent items from wrapping */
 }
 
@@ -206,7 +213,21 @@ html, body {
   color: black;
 }
 
-/* Submenu Items */
+/* Prevent highlighting parent .dropdown-item when clicking a submenu item */
+.dropdown-item:focus,
+.dropdown-item:active {
+  outline: none; /* Remove focus outline */
+  background: none; /* Prevent background color change */
+}
+
+.sub-menu-item:focus,
+.sub-menu-item:active {
+  background-color: rgb(243, 235, 235); /* Highlight active sub-menu-item */
+  outline: none; /* Remove focus outline for cleaner design */
+}
+
+
+
 .sub-menu-item {
   padding: 10px;
   text-decoration: none;
@@ -224,38 +245,167 @@ html, body {
   font-weight: bold;
   color: rgb(0, 7, 82);
 }
+
+
+/*
   @media (max-width: 768px) {
-    .header {
-      flex-direction: column; /* Stack logo and text vertically */
-    }
-  
-    .header-logo {
-      max-height: 100px; /* Scale down for small screens */
-      width: 80%; /* Adjust width within container */
-    }
-  
-    .tile-container {
-      padding: 10px;
-      width: 100%;
+
+ 
+    .header img {
+      max-height: 32px; 
+      width: auto; 
     }
 
-    .tile-container .tile-content {
-      flex: 1 0 90%; /* Reduce width slightly on smaller screens */
-      width: 100%; /* Full width on smaller screens */
-      padding: 10px;
-      font-size: 14px; /* Slightly smaller font */
+    .header h1 {
+      font-size: 1.8em;
     }
 
     .era-container {
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust columns for small screens */
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /
     }
 
     .era-title {
       font-size: 16px;
     }
 
+    .menu-button {
+      font-size: .4em;
+      padding: 5px;
+    }
+
+    .menu-button img {
+      width: 24px;
+    }
+
+    .dropdown-menu {
+      margin: 0 auto;
+    }
+
+    .home {
+      max-height: 36px;
+      width: auto;
+      padding: 2px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .home img {
+      transform: scale(.75);
+    }
+
     footer {
       position: absolute;
       bottom: 0;
     }
+  } */
+
+  @media (max-width: 768px) {
+    .header {
+      position: fixed;
+      bottom: 0;
+      width: 100%; /* Make the header span the entire width */
+      background-color: #f7f3f3;
+      z-index: 1000; /* Ensure it stays above other elements */
+      justify-content: space-between;
+    }
+  
+    .header-buttons {
+      margin-left: 0;
+      display: flex;
+      gap: 10px;
+    }
+  
+    .header h1,
+    .header h3 {
+      display: none; /* Hide header text for small screens */
+    }
+  
+    .header-text-container {
+      margin-right: 0;
+    }
+  
+   
+   /* Dropdown Menu */
+
+  .dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: auto; /* Reset any 'top' positioning */
+    bottom: 100%; /* Opens upwards */
+    left: 0; /* Align to the left edge of the parent container */
+    background-color: white;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Shadow for upward opening */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 200;
+    min-width: 200px; /* Adjust width as needed */
   }
+
+  .dropdown-menu:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+  }
+
+  /* Submenu */
+  .sub-menu {
+    display: none; /* Hidden by default */
+    position: relative;
+    left: auto;
+    right: auto;
+    background-color: white;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Shadow for upward opening */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 300;
+    width: inherit;
+  }
+
+  .dropdown-item:hover .sub-menu {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 500ms ease-in-out;
+  }
+
+  /* General Styling for Menu Items */
+  .menu-button {
+    background-color: white;
+    padding: 6spx 8px;
+    font-size: .9em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .dropdown-item {
+    padding: 5px;
+    position: relative; /* Required for sub-menu positioning */
+    flex-direction: column;
+  }
+
+  .sub-menu-item {
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  .sub-menu-item.active-link {
+    font-weight: bold; /* Highlight active link */
+    color: rgb(0, 7, 82);
+  }
+
+
+    }
+    
+    @keyframes fadeIn {
+      0% {
+        opacity: 0%;
+      }
+
+      100% {
+        opacity: 100%;
+      }
+      
+    }
+
+    
+    
