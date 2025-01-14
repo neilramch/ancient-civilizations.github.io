@@ -13,6 +13,7 @@ const App = () => {
       "Egypt",
       "Akkad", 
       "Babylonia",
+      "Assyria",
       "Hittites",
     ],
     "Iron Age - Classical Civilizations (c. 1200 BCE – c. 500 CE)": [
