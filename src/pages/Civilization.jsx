@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Civilization.css";
+import { NavLink } from "react-router-dom";
 
 const Civilization = () => {
   const { civilizationName } = useParams();
@@ -945,11 +946,152 @@ const Civilization = () => {
     const getWikipediaUrl = (name) => {
       return `https://en.wikipedia.org/wiki/${name.replace(/ /g, "_")}`;
     };
+
+    const tooltipWords = {
+      "Near East": "An ancient region located in the eastern Mediterranean, widely regarded as the cradle of civilization.",
+      "Ziggurat": "A rectangular stepped tower, often surmounted by a temple, common in ancient Mesopotamia.",
+      "Mesopotamia": "Often referred to as the 'Cradle of Civilization,' Mesopotamia is where writing, agriculture, and urban societies first developed.",
+      "Sumerians": "An ancient people of southern Mesopotamia, known for inventing the earliest writing system, cuneiform.",
+      "Cuneiform": "The earliest known system of writing, developed by the Sumerians around 3000 BCE.",
+      "Akkad": "A Mesopotamian city and the center of the Akkadian Empire, founded by Sargon the Great.",
+      "Babylon": "An iconic city in Mesopotamia, known for Hammurabi's Code and the Hanging Gardens.",
+      "Hammurabi": "The sixth king of the First Babylonian Dynasty, famous for creating one of the earliest and most comprehensive legal codes.",
+      "Hanging Gardens": "One of the Seven Wonders of the Ancient World, traditionally attributed to Babylon but debated by historians.",
+      "Assyria": "A powerful Mesopotamian empire known for its military prowess, monumental architecture, and advanced administration.",
+      "Nineveh": "The capital of the Assyrian Empire, renowned for its vast library and architectural achievements.",
+      "Ashurbanipal": "An Assyrian king known for creating one of the world's first libraries in Nineveh.",
+      "Persian Empire": "An empire founded by Cyrus the Great, known for its tolerance and administrative efficiency.",
+      "Cyrus the Great": "The founder of the Achaemenid Persian Empire, famous for his policies of tolerance and the Cyrus Cylinder.",
+      "Rosetta Stone": "A granodiorite stele inscribed with a decree in three scripts that helped decipher Egyptian hieroglyphs.",
+      "Hieroglyphs": "The formal writing system of ancient Egypt, combining logographic and alphabetic elements.",
+      "Pharaoh": "A ruler in ancient Egypt, often considered a divine figure.",
+      "The Great Pyramid": "A massive pyramid built during the reign of Pharaoh Khufu, one of the Seven Wonders of the Ancient World.",
+      "Ramses II": "One of Egypt’s most powerful pharaohs, known for his military campaigns and monumental constructions.",
+      "Hittites": "An ancient Anatolian people known for their ironworking and the earliest known peace treaty with Egypt after the Battle of Kadesh.",
+      "Battle of Kadesh": "A major battle between the Hittite Empire and Egypt, considered the largest chariot battle in history.",
+      "Indus Valley": "An advanced Bronze Age civilization in South Asia, noted for its urban planning and undeciphered script.",
+      "Mohenjo-Daro": "A major city of the Indus Valley Civilization, known for its advanced drainage and urban planning.",
+      "Harappa": "An important archaeological site of the Indus Valley Civilization, offering insights into early urban life.",
+      "China": "An ancient civilization known for its continuous history, the Great Wall, and significant inventions like paper and silk.",
+      "Silk Road": "A network of trade routes connecting China to the Mediterranean, facilitating cultural and economic exchange.",
+      "Confucius": "A Chinese philosopher whose teachings emphasized ethics, family loyalty, and social harmony.",
+      "Terracotta Army": "A collection of clay statues representing the armies of China's first emperor, Qin Shi Huang.",
+      "Alexander the Great": "A Macedonian king who created one of the largest empires in history and spread Hellenistic culture.",
+      "Athens": "A Greek city-state known as the birthplace of democracy and home to many philosophers.",
+      "Sparta": "A Greek city-state famous for its military discipline and training.",
+      "Homer": "An ancient Greek poet attributed with writing the epic poems, the Iliad and the Odyssey.",
+      "Roman Republic": "The period before the Roman Empire, characterized by a government led by elected officials and a Senate.",
+      "Julius Caesar": "A Roman general and statesman whose actions led to the end of the Roman Republic and the rise of the Roman Empire.",
+      "Augustus": "The first emperor of Rome, who ushered in the Pax Romana, a period of peace and stability.",
+      "Colosseum": "A large amphitheater in Rome used for gladiatorial games and public spectacles.",
+      "Byzantine Empire": "The continuation of the Roman Empire in the East, with its capital at Constantinople.",
+      "Maya": "A Mesoamerican civilization known for its advanced writing, astronomy, and monumental architecture.",
+      "Chichen Itza": "A large Mayan city famous for its pyramid, El Castillo, and its role as a ceremonial center.",
+      "Aztec": "A Mesoamerican culture that built a powerful empire in central Mexico, with Tenochtitlán as its capital.",
+      "Tenochtitlán": "The Aztec capital, located on an island in Lake Texcoco, now modern-day Mexico City.",
+      "Inca": "A South American empire known for its advanced engineering and extensive road network in the Andes.",
+      "Machu Picchu": "An ancient Incan city located high in the Andes, known for its architectural marvels.",
+      "Olmec": "The earliest known Mesoamerican civilization, famous for their colossal stone heads and influence on later cultures.",
+      "Toltec": "A Mesoamerican culture known for its influence on the Aztecs and its ceremonial center at Tula.",
+      "Japan": "An island nation with a rich history, including the Jomon, Yayoi, and Heian periods, and samurai culture.",
+      "Samurai": "The warrior class of feudal Japan, known for their strict code of honor, bushido.",
+      "Shogun": "The military ruler of Japan during the feudal period."
+      
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const tooltips = document.querySelectorAll(".tooltip");
+    
+      const adjustTooltipPosition = (tooltip) => {
+        const tooltipText = tooltip.querySelector(".tooltip-text");
+        if (!tooltipText) return;
+    
+        // Reset tooltip position to calculate accurately
+        tooltipText.style.left = "50%";
+        tooltipText.style.top = "auto";
+        tooltipText.style.bottom = "120%";
+        tooltipText.style.transform = "translateX(-50%)";
+    
+        const container = document.querySelector(".civilization-section");
+        const containerRect = container.getBoundingClientRect();
+        const tooltipRect = tooltipText.getBoundingClientRect();
+    
+        // Adjust for top overflow
+        if (tooltipRect.top < 0) {
+          tooltipText.style.top = "100%";
+          tooltipText.style.bottom = "auto";
+        }
+    
+        // Adjust for left/right overflow
+        if (tooltipRect.left < 0) {
+          tooltipText.style.left = "10px";
+          tooltipText.style.transform = "none";
+        } else if (tooltipRect.right > window.innerWidth) {
+          tooltipText.style.left = "auto";
+          tooltipText.style.right = "10px";
+          tooltipText.style.transform = "none";
+        }
+      };
+    
+      const observer = new MutationObserver(() => {
+        tooltips.forEach((tooltip) => adjustTooltipPosition(tooltip));
+      });
+    
+      // Observe the main container for dynamic content changes
+      const container = document.querySelector(".civilization-section");
+      if (container) {
+        observer.observe(container, { childList: true, subtree: true });
+      }
+    
+      // Adjust positions initially and on window resize
+      tooltips.forEach((tooltip) => adjustTooltipPosition(tooltip));
+      window.addEventListener("resize", () => {
+        tooltips.forEach((tooltip) => adjustTooltipPosition(tooltip));
+      });
+    });
+    
+
+    const processText = (text, civilizations, tooltipWords) => {
+      const allWords = { ...civilizations, ...tooltipWords };
+    
+      const sortedKeys = Object.keys(allWords).sort((a, b) => b.length - a.length);
+    
+      const regex = new RegExp(`\\b(${sortedKeys.join('|')})\\b`, 'gi');
+    
+      return text.split(regex).map((part, index) => {
+        const trimmedPart = part.trim();
+    
+        if (civilizations[trimmedPart]) {
+          return (
+            <NavLink
+              key={index}
+              to={`/${trimmedPart}`}
+              className="civilization-link"
+            >
+              {trimmedPart}
+            </NavLink>
+          );
+        }
+        if (tooltipWords[trimmedPart]) {
+          return (
+            <div className="tooltip-container">
+              <span key={index} className="tooltip">
+                {trimmedPart}
+                <span className="tooltip-text">{tooltipWords[trimmedPart]}</span>
+              </span>
+            </div>
+          );
+        }
+        return part;
+      });
+    };
+    
+    
   
     return (
       <div className="civilization-section">
       <h1>{formatCivilizationName(civilizationName)}</h1>
-      <p>{civilization.description}</p>
+      <p>{processText(civilization.description, civilizationData, tooltipWords)}</p>
       <img src={civilization.image?.url} alt={civilization.image?.description || `${civilizationName} illustration`} className="civilization-image" />
 
       <ul className="civilization-items">
@@ -974,7 +1116,7 @@ const Civilization = () => {
                  {item.image.description && <p className="image-description">{item.image.description}</p>}
                </div>
              )}
-              <p>{item.content}</p>
+             <p>{processText(item.content, civilizationData, tooltipWords)}</p>
            </div>
             )}
           </li>

@@ -58,6 +58,10 @@ body {
     border-radius: 10px;
 }
 
+.timelines img {
+    max-height: 100svh;
+}
+
 @media (max-width: 768px) {
     .map-container iframe {
         width: 100%;

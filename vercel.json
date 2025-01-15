@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/civilizations/:id",
+        "destination": "/civilizations/[id].html"
+      }
+    ]
+  }
+  
