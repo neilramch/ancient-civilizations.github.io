@@ -728,11 +728,11 @@ const Civilization = () => {
         iframeSrc: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1brElQBdWbvOaMlxNvNF4Jlu6XIAuyhcbZdA6v2-6ZDc&font=Default&lang=en&initial_zoom=2&height=650",
       },
       Olmecs: {
-        description: "The Olmec civilization, flourishing from approximately 1200 to 400 BCE along Mexico's Gulf Coast in present-day Veracruz and Tabasco, is recognized as Mesoamerica's earliest major civilization. Renowned for their monumental stone sculptures, including colossal heads, and significant cultural contributions, the Olmecs laid foundational aspects of Mesoamerican society, influencing subsequent civilizations such as the Maya and Aztec. :contentReference[oaicite:0]{index=0}",
+        description: "The Olmec civilization, flourishing from approximately 1200 to 400 BCE along Mexico's Gulf Coast in present-day Veracruz and Tabasco, is recognized as Mesoamerica's earliest major civilization. Renowned for their monumental stone sculptures, including colossal heads, and significant cultural contributions, the Olmecs laid foundational aspects of Mesoamerican society, influencing subsequent civilizations such as the Maya and Aztec.",
         items: [
           {
             title: "Origins and Heartland",
-            content: "The Olmec civilization emerged in the fertile lowlands of the Gulf of Mexico, particularly in the modern Mexican states of Veracruz and Tabasco. This region, often referred to as the Olmec heartland, was characterized by rich alluvial soils, abundant water sources, and a tropical climate, providing an ideal environment for agriculture and settlement. The development of complex societies in this area set the stage for the rise of the Olmec civilization. :contentReference[oaicite:1]{index=1}",
+            content: "The Olmec civilization emerged in the fertile lowlands of the Gulf of Mexico, particularly in the modern Mexican states of Veracruz and Tabasco. This region, often referred to as the Olmec heartland, was characterized by rich alluvial soils, abundant water sources, and a tropical climate, providing an ideal environment for agriculture and settlement. The development of complex societies in this area set the stage for the rise of the Olmec civilization.",
             image: {
               url: "https://cdn.preterhuman.net/texts/other/crystalinks/olmecmap.jpg",
               
@@ -741,7 +741,7 @@ const Civilization = () => {
           },
           {
             title: "Major Urban Centers",
-            content: "The Olmecs established several significant urban centers, with San Lorenzo Tenochtitlán and La Venta being the most prominent. San Lorenzo, flourishing around 1200 to 900 BCE, is notable for its complex drainage systems and monumental architecture. Following the decline of San Lorenzo, La Venta rose to prominence around 900 to 400 BCE, featuring impressive earthen pyramids and ceremonial complexes. These centers served as political, religious, and cultural hubs, reflecting the sophistication of Olmec society. :contentReference[oaicite:2]{index=2}",
+            content: "The Olmecs established several significant urban centers, with San Lorenzo Tenochtitlán and La Venta being the most prominent. San Lorenzo, flourishing around 1200 to 900 BCE, is notable for its complex drainage systems and monumental architecture. Following the decline of San Lorenzo, La Venta rose to prominence around 900 to 400 BCE, featuring impressive earthen pyramids and ceremonial complexes. These centers served as political, religious, and cultural hubs, reflecting the sophistication of Olmec society.",
             image: {
               url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/La_Venta_Pirámide_cara_sur.jpg/800px-La_Venta_Pirámide_cara_sur.jpg",
               
@@ -750,7 +750,7 @@ const Civilization = () => {
           },
           {
             title: "Art and Iconography",
-            content: "Olmec art is renowned for its distinctive style and iconography, with the colossal stone heads being among the most iconic artifacts. These massive sculptures, some weighing up to 40 tons, are believed to represent Olmec rulers and exhibit individualized facial features. In addition to the colossal heads, the Olmecs produced intricate jade carvings, pottery, and figurines, often depicting deities, mythical creatures, and ritual scenes. Their art reflects a complex cosmology and has significantly influenced the artistic traditions of subsequent Mesoamerican cultures. :contentReference[oaicite:3]{index=3}",
+            content: "Olmec art is renowned for its distinctive style and iconography, with the colossal stone heads being among the most iconic artifacts. These massive sculptures, some weighing up to 40 tons, are believed to represent Olmec rulers and exhibit individualized facial features. In addition to the colossal heads, the Olmecs produced intricate jade carvings, pottery, and figurines, often depicting deities, mythical creatures, and ritual scenes. Their art reflects a complex cosmology and has significantly influenced the artistic traditions of subsequent Mesoamerican cultures.",
             image: {
               url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Olmeca_head_in_Villahermosa.jpg/1280px-Olmeca_head_in_Villahermosa.jpg",
               description: "An Olmec colossal head, showcasing the distinctive artistic style of the civilization."
@@ -758,7 +758,7 @@ const Civilization = () => {
           },
           {
             title: "Religion and Mythology",
-            content: "The religious beliefs of the Olmec civilization were complex and influential, featuring a pantheon of deities and supernatural beings. Central to their religion was the worship of the jaguar, often depicted as a were-jaguar figure, symbolizing a connection between the human and divine realms. The Olmecs are also credited with developing early forms of ritual practices, including bloodletting and possibly human sacrifice, which became prevalent in later Mesoamerican religions. :contentReference[oaicite:4]{index=4}",
+            content: "The religious beliefs of the Olmec civilization were complex and influential, featuring a pantheon of deities and supernatural beings. Central to their religion was the worship of the jaguar, often depicted as a were-jaguar figure, symbolizing a connection between the human and divine realms. The Olmecs are also credited with developing early forms of ritual practices, including bloodletting and possibly human sacrifice, which became prevalent in later Mesoamerican religions. ",
             image: {
               url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Small_Olmec_Figurines_%28Met%29.jpg/1280px-Small_Olmec_Figurines_%28Met%29.jpg",
               description: "A selection of tiny naturalistic Olmec ceramic figurines from the Metropolitan Museum of Art. The hunchback at center is less than 3 inches (7.6 cm) tall."
@@ -766,7 +766,7 @@ const Civilization = () => {
           },
           {
             title: "Influence and Legacy",
-            content: "The Olmec civilization is often referred to as the 'mother culture' of Mesoamerica due to its significant influence on later societies. They are credited with innovations such as the Mesoamerican Long Count calendar, the concept of zero, and possibly the earliest writing system in the Western Hemisphere. Their religious iconography, architectural styles, and societal organization set foundational patterns that were adopted and adapted by subsequent civilizations, including the Maya and the Aztec. :contentReference[oaicite:5]{index=5}",
+            content: "The Olmec civilization is often referred to as the 'mother culture' of Mesoamerica due to its significant influence on later societies. They are credited with innovations such as the Mesoamerican Long Count calendar, the concept of zero, and possibly the earliest writing system in the Western Hemisphere. Their religious iconography, architectural styles, and societal organization set foundational patterns that were adopted and adapted by subsequent civilizations, including the Maya and the Aztec.",
             image: {
               url: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Tumba_Olmeca.jpg",
               description: "Olmec tomb at La Venta Park, Villahermosa, Tabasco"
@@ -995,9 +995,18 @@ const Civilization = () => {
       "Toltec": "A Mesoamerican culture known for its influence on the Aztecs and its ceremonial center at Tula.",
       "Japan": "An island nation with a rich history, including the Jomon, Yayoi, and Heian periods, and samurai culture.",
       "Samurai": "The warrior class of feudal Japan, known for their strict code of honor, bushido.",
-      "Shogun": "The military ruler of Japan during the feudal period."
-      
-    };
+      "Shogun": "The military ruler of Japan during the feudal period.",
+      "Epic of Gilgamesh":  "The Epic of Gilgamesh is an epic from ancient Mesopotamia beginning with five Sumerian poems about Gilgamesh, king of Uruk",
+      "Persepolis": "Founded by Darius I in 518 B.C., Persepolis was the capital of the Achaemenid Empire.",
+      "Hellenistic": "In classical antiquity, the Hellenistic period covers the time in Greek history after Classical Greece, between the death of Alexander the Great in 323 BC and the death of Cleopatra VII in 30 BC",
+      "Hellenism": "In classical antiquity, the Hellenistic period covers the time in Greek history after Classical Greece, between the death of Alexander the Great in 323 BC and the death of Cleopatra VII in 30 BC",
+      "Romulus": "According to tradition, Romulus was Rome's first king. His legendary reign was filled with deeds expected of an ancient city founder and the son of a war god. ",
+      "Remus": "Romulus and Remus are twin brothers in Roman mythology who are said to have founded Rome.",
+      "Indo-Aryan": "The early Indo-Aryan peoples were known to be closely related to the Indo-Iranian group that have resided north of the Indus River; an evident connection in cultural, linguistic, and historical ties.",
+      "Mesoamerica": "Mesoamerica is a historical region and cultural area that begins in the southern part of North America and extends to the Pacific coast of Central America",
+      "Mesoamerican": "Mesoamerica is a historical region and cultural area that begins in the southern part of North America and extends to the Pacific coast of Central America",
+
+    }
 
     document.addEventListener("DOMContentLoaded", () => {
       const tooltips = document.querySelectorAll(".tooltip");

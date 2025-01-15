@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
 import Civilization from "./pages/Civilization";
+import Region from "./pages/wars/Region"; // Import the Region component
 import "./App.css";
 import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+
+  // Civilization Data
   const civilizationEras = {
     "Bronze Age - Early Civilizations (c. 3500 BCE – c. 1200 BCE)": [
       "Sumer",
       "IndusValley",
       "Egypt",
-      "Akkad", 
+      "Akkad",
       "Babylonia",
       "Assyria",
       "Hittites",
@@ -33,14 +37,31 @@ const App = () => {
     ],
   };
 
-  const formatCivilizationName = (name) => {
+  // Wars Data
+  const warsByRegion = {
+    "Europe": [
+      "Peloponnesian War",
+      "Punic Wars",
+      "Hundred Years' War",
+      "Thirty Years' War",
+      "Napoleonic Wars",
+      "World War I",
+      "World War II",
+      "Cold War Conflicts",
+      "Yugoslav Wars",
+    ],
+    "Asia": [
+      "Sino-Japanese War",
+      "Vietnam War",
+      "Mongol Conquests",
+      "Korean War",
+    ],
+  };
+
+  // Format Function
+  const formatName = (name) => {
     return name.replace(/([A-Z])/g, " $1").trim(); // Inserts space before uppercase letters
   };
-  
-  const toggleSubmenu = (era) => {
-    setOpenSubmenu(openSubmenu === era ? null : era); // Toggle submenu visibility
-  };
- 
 
   return (
     <Router basename="/">
@@ -53,39 +74,75 @@ const App = () => {
           </div>
         </div>
         <div className="header-buttons">
-        <nav className="dropdown-menu">
-          <button className="menu-button">Explore Civilizations <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+ElEQVR4nO2ZMQ6CUBBE5xiKJ1I8j9hKPJZYwIUM2FCNIVkKSUw+FP8vOC/ZbjeZYT7ZYgEhxFLOACoAbwBMXJ1pyeeauDsQzx9VzkliGOgBXABkSE8GoDBNg7ZTyNDTmodBbxSm7RHS3FnzHv7YmbY2pHl8i15hqD4ZiQSViDOoRCY0EbZ3g40YqWMYSQ1lxBlUIs6gEnEG17RHmq0YqWMYSQ1lxBlUIs6gEnEG17RHmq0YqWMYSQ1lxBlUIs7g3yXSWqOHk9uUg2l7IYDK8entOuf0lltzb2Y8HkOPoYNlhO29tG5zv8LJIhz/mZTVmpbgJIQQ+OIDvrPJx04tYoYAAAAASUVORK5CYII=" alt="menu-squared-2"></img></button>
-          <div className="dropdown">
-            {Object.entries(civilizationEras).map(([era, civilizations]) => (
-              <div key={era} className="dropdown-item">
-                <span>{era}</span>
-                <div className="sub-menu">
-                  {civilizations.map((civilization) => (
-                    <NavLink to={`/${civilization}`} key={civilization}  className={({ isActive }) =>
-                      `sub-menu-item ${isActive ? "active-link" : ""}`
-                    }>
-                      {formatCivilizationName(civilization)}
-                    </NavLink>
-                  ))}
+          {/* Explore Civilizations Dropdown */}
+          <nav className="dropdown-menu">
+            <button className="menu-button">
+              Explore Civilizations
+            </button>
+            <div className="dropdown">
+              {Object.entries(civilizationEras).map(([era, civilizations]) => (
+                <div key={era} className="dropdown-item">
+                  <span>{era}</span>
+                  <div className="sub-menu">
+                    {civilizations.map((civilization) => (
+                      <NavLink
+                        to={`/${civilization}`}
+                        key={civilization}
+                        className={({ isActive }) =>
+                          `sub-menu-item ${isActive ? "active-link" : ""}`
+                        }
+                      >
+                        {formatName(civilization)}
+                      </NavLink>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          
-        </nav>
-        <div className="home">
+              ))}
+            </div>
+          </nav>
+
+          {/* Explore Wars Dropdown */}
+          <nav className="dropdown-menu">
+            <button className="menu-button">
+              Explore Wars
+            </button>
+            <div className="dropdown">
+              {Object.entries(warsByRegion).map(([region, wars]) => (
+                <div key={region} className="dropdown-item">
+                  <span>{region}</span>
+                  <div className="sub-menu">
+                    {wars.map((war) => (
+                      <NavLink
+                        to={`/region/${region.toLowerCase()}`}
+                        key={war}
+                        className={({ isActive }) =>
+                          `sub-menu-item ${isActive ? "active-link" : ""}`
+                        }
+                      >
+                        {war}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </nav>
+
+          <div className="home">
             <a href="/">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB9UlEQVR4nO3Wz6tMcRjH8RduCCldSkLpLu5SoqQkbCg7Gws73fwJ7uIu78a/YGEjxYaVDaGukV8LbKyUkPxKSpS48tWp52oac82ZMWfmTL7veuo05/t9ns/nfJ/zzCFTiq24ietxPZLsx1ukiA84ZIRYghn8CANXIlL8NhNras1aXArRP3EaS0P4dIu5dWrKdjxtaqPDbdYcwLtY8wK71Izj+BICH2LbX9Zuwb1Y+xUnmu6lRaJyxqJ9Fgqew6oS+1bgTNO+4nr5sIxsxp2mJzvVQ46p2FvkuNtGeOVG9uFNFHmJ3f+QaweeLXICqSojxfQ5hfkocBXjfcg7HrlSxHTUqsRI62idxbI+5i9yzUbuosblKoxM4kkk/YSjquMIPlbxsh/D50j4GBOqZyJqLRgpNPRttJ7HaoNjJc62GdFdsQE3IsF8vHzD4iS+hZYGNpXduBevY+Mr7DF8duJ5aHqPg2Xcf48Nc9ioPqzHtZYu+eMreg0utkyK4h2pG2MtGi+E9t88aBqtA/tQ65HUovV+883beBT/F6NiZDI0NzotrCuprL5sZECkfCL/24mkHqPXOh3JRnT3hGt/ImXJRuQTKUdurS5JubVKklurS1JurZLk1uqSlFurJLm1uiTl1hr11ko1j440aiAydYhbnW1kMvrBL/A6qXQvVsG5AAAAAElFTkSuQmCC" alt="home--v1"></img>
+              <img src="h.png" alt="home" />
             </a>
           </div>
-          </div>
+        </div>
       </header>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:civilizationName" element={<Civilization />} />
+        <Route path="/region/:regionName" element={<Region />} /> {/* Dynamic region route */}
       </Routes>
     </Router>
   );
 };
+
 export default App;
