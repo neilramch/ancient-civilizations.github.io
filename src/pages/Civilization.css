@@ -112,7 +112,7 @@
 
   .civilization-link {
     color: #01346b;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
   }
   
