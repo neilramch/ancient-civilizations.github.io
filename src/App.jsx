@@ -5,13 +5,15 @@ import Civilization from "./pages/Civilization";
 import Region from "./pages/wars/Region";
 import "./App.css";
 import ScrollToTop from "./ScrollToTop";
+import { Link } from "react-router-dom";
+import Innovation from "./pages/innovation/Innovation";
 
 const App = () => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
 
   // Civilization Data
   const civilizationEras = {
-    "Bronze Age - Early Civilizations (c. 3500 BCE – c. 1200 BCE)": [
+    "Bronze Age (c. 3500 BCE – c. 1200 BCE)": [
       "Sumer",
       "IndusValley",
       "Egypt",
@@ -20,7 +22,7 @@ const App = () => {
       "Assyria",
       "Hittites",
     ],
-    "Iron Age - Classical Civilizations (c. 1200 BCE – c. 500 CE)": [
+    "Iron Age (c. 1200 BCE – c. 500 CE)": [
       "Greece",
       "Rome",
       "Persia",
@@ -127,69 +129,83 @@ const App = () => {
             <h3>A GUIDE TO ANTIQUITY</h3>
           </div>
         </div>
-        <div className="header-buttons">
-          {/* Explore Civilizations Dropdown */}
-          <nav className="dropdown-menu">
-            <button className="menu-button">
-              Explore Civilizations
-              <img src="/globe.gif" />
-            </button>
-            <div className="dropdown">
-              {Object.entries(civilizationEras).map(([era, civilizations]) => (
-                <div key={era} className="dropdown-item">
-                  <span>{era}</span>
-                  <div className="sub-menu">
-                    {civilizations.map((civilization) => (
-                      <NavLink
-                        to={`/${civilization}`}
-                        key={civilization}
-                        className={({ isActive }) =>
-                          `sub-menu-item ${isActive ? "active-link" : ""}`
-                        }
-                      >
-                        {formatName(civilization)}
-                      </NavLink>
-                    ))}
+        <div className="menu-container">
+              <h3>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50">
+                <path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"></path>
+              </svg>
+              </h3>
+          <div className="header-buttons">
+            {/* Explore Civilizations Dropdown */}           
+            <nav className="dropdown-menu">
+              <button className="menu-button">
+                Explore Civilizations
+                <img src="/globe.gif" />
+              </button>
+              <div className="dropdown">
+                {Object.entries(civilizationEras).map(([era, civilizations]) => (
+                  <div key={era} className="dropdown-item">
+                    <span>{era}</span>
+                    <div className="sub-menu">
+                      {civilizations.map((civilization) => (
+                        <NavLink
+                          to={`/${civilization}`}
+                          key={civilization}
+                          className={({ isActive }) =>
+                            `sub-menu-item ${isActive ? "active-link" : ""}`
+                          }
+                        >
+                          {formatName(civilization)}
+                        </NavLink>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </nav>
+                ))}
+              </div>
+            </nav>
 
-          <nav className="dropdown-menu">
-  <button className="menu-button">Explore Wars
-    <img src="/war.svg" />
-  </button>
-  <div className="dropdown">
-    {Object.entries(warsByRegion).map(([region, wars]) => (
-      <div key={region} className="dropdown-item">
-        <span>{region}</span>
-        <div className="sub-menu">
-          {wars.map((war) => (
-            <NavLink
-              to={`/region/${region.toLowerCase()}/${war
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`}
-              key={war}
-              className={({ isActive }) =>
-                `sub-menu-item ${isActive ? "active-link" : ""}`
-              }
-            >
-              {war}
-            </NavLink>
-          ))}
+            <nav className="dropdown-menu">
+    <button className="menu-button">Explore Wars
+      <img src="/war.svg" />
+    </button>
+    <div className="dropdown">
+      {Object.entries(warsByRegion).map(([region, wars]) => (
+        <div key={region} className="dropdown-item">
+          <span>{region}</span>
+          <div className="sub-menu">
+            {wars.map((war) => (
+              <NavLink
+                to={`/region/${region.toLowerCase()}/${war
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")}`}
+                key={war}
+                className={({ isActive }) =>
+                  `sub-menu-item ${isActive ? "active-link" : ""}`
+                }
+              >
+                {war}
+              </NavLink>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-</nav>
+      ))}
+    </div>
+            </nav>
+            <nav className="dropdown-menu">
+              <Link to ="/innovation" className="menu-button">
+                Explore Innovations
+                <img src="/globe.gif" />
+              </Link>
+            </nav>
 
-          <div className="home">
-            <a href="/">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2YP4sTURTFnyKK4N9iLdbGTgmIlWHm3XPeQzbCfAOtxMrazq9ga2lrJQgigqUIuiysLFjZLDY2LioWgqTQxZEnk+wYZieJmZ15gXvgQCDJ3Pt7N+dOEmNU0+W9v0DiVXB4bJZRztlrJD6TyAt/A5CZJdIhAPcA2S1BjPybxH1jzGETs/r9/ikSTysA/jGAFwDOmhglIldIfJgGUfJH59Kr5Wtwn9e2CXGLxHAOiJGH4b17IHKXxM/WQbIsO0bKg/8AmLA8SpLkeHEoAORTayBJkpwHsLE4xNhboxUNYAWQlwcOAsADstMgRLEE5Ktzcj3U8N4fCRsubLq2V2tTMLuhRqgVCpL2RqME1tqTpDw5KIAKP/fen2kUwvv0EinvW4TIi+lsO+cuNwIB4CYgP9qG4J6HJG8vMIVx2PJI/LDX6x2dCyJN03Pl9RePZd1auzoTRNUNKS7LFwBrtRAA7lR9RYjNgPwqr+hyHk4AeNx1g5wf6NlgMDhdnsTb4snvXTfH2f23V0A2xyAhRCTeWWsvRtBgPouLXrcAvK7MSdcNckZP3VpdN0gFmVDXJ02dyIS6PmnqRCbU9UkzholMvXibtagg0IlQP1o10oxQM5JrRuqkGaFmJNeM1EkzQs1IrhmpE4k3sf+wwn7/LqpUpnH9AdSDjGMNvIycAAAAAElFTkSuQmCC" alt="home" />
 
-          
-            </a>
+            <div className="home">
+              <a href="/">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2YP4sTURTFnyKK4N9iLdbGTgmIlWHm3XPeQzbCfAOtxMrazq9ga2lrJQgigqUIuiysLFjZLDY2LioWgqTQxZEnk+wYZieJmZ15gXvgQCDJ3Pt7N+dOEmNU0+W9v0DiVXB4bJZRztlrJD6TyAt/A5CZJdIhAPcA2S1BjPybxH1jzGETs/r9/ikSTysA/jGAFwDOmhglIldIfJgGUfJH59Kr5Wtwn9e2CXGLxHAOiJGH4b17IHKXxM/WQbIsO0bKg/8AmLA8SpLkeHEoAORTayBJkpwHsLE4xNhboxUNYAWQlwcOAsADstMgRLEE5Ktzcj3U8N4fCRsubLq2V2tTMLuhRqgVCpL2RqME1tqTpDw5KIAKP/fen2kUwvv0EinvW4TIi+lsO+cuNwIB4CYgP9qG4J6HJG8vMIVx2PJI/LDX6x2dCyJN03Pl9RePZd1auzoTRNUNKS7LFwBrtRAA7lR9RYjNgPwqr+hyHk4AeNx1g5wf6NlgMDhdnsTb4snvXTfH2f23V0A2xyAhRCTeWWsvRtBgPouLXrcAvK7MSdcNckZP3VpdN0gFmVDXJ02dyIS6PmnqRCbU9UkzholMvXibtagg0IlQP1o10oxQM5JrRuqkGaFmJNeM1EkzQs1IrhmpE4k3sf+wwn7/LqpUpnH9AdSDjGMNvIycAAAAAElFTkSuQmCC" alt="home" />
+
+            
+              </a>
+            </div>
           </div>
         </div>
       </header>
@@ -199,7 +215,7 @@ const App = () => {
         <Route path="/:civilizationName" element={<Civilization />} />
         <Route path="/region/:regionName" element={<Region />} /> {/* Dynamic region route */}
         <Route path="/region/:regionName/:warName" element={<Region />} />
-
+        <Route path="/innovation" element={<Innovation />} />
       </Routes>
     </Router>
   );

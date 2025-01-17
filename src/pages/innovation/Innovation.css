@@ -1,0 +1,41 @@
+h3 {
+    color: black;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive tiles */
+    gap: 20px; /* Space between tiles */
+    padding: 20px;
+    justify-items: center;
+  }
+  
+  .grid-tile {
+    background: linear-gradient(145deg, #f7f7f7, #eaeaea);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    color: #333;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    width: 250px;
+  }
+  
+  .grid-tile:hover {
+    transform: translateY(-5px) scale(1.03); /* Modern hover effect */
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2), -6px -6px 15px rgba(255, 255, 255, 1);
+  }
+  
+  .grid-tile:active {
+    transform: translateY(2px) scale(0.98); /* Click effect */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 1);
+  }
+  
+  .grid-tile:focus {
+    outline: 2px solid #0078ff; /* Accessibility focus */
+    outline-offset: 4px;
+  }
+  
