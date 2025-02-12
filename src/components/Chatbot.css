@@ -8,6 +8,20 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
   }
+
+  .chat-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat-menu img {
+    height: 10svh;
+    width: auto;
+  }
+
+  .chat-menu p {
+    font-size: .5em;
+  }
   
   /* Header */
   .chat-header {
@@ -99,4 +113,26 @@
     background: #a0a0a0;
     cursor: not-allowed;
   }
+
+  .chat-contents { 
+    display: none;
+}
+
+.chat-container:hover .chat-contents {
+    display: block;
+}
+
+.chat-container:hover .chat-menu {
+    display: none;
+}
+
   
+  @media (max-width: 768px) {
+    .chat-contents { 
+        display: none;
+    }
+
+    .chat-container:hover .chat-contents {
+        display: block;
+    }
+  }
