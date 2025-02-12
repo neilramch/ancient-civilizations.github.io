@@ -281,6 +281,13 @@ html, body {
   color: rgb(0, 7, 82);
 }
 
+.chat-container {
+  position: fixed;
+  bottom: 25px;
+  right: 50px;
+  z-index: 1000;
+}
+
 
   @media (max-width: 768px) {
     .header {
@@ -392,6 +399,24 @@ html, body {
     color: rgb(0, 7, 82);
   }
 
+  .map-container iframe {
+    width: 100%;
+    height: 80svh;
+}
+
+.map-container h1 {
+    font-size: 2em;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 100px;
+    left: 40px;
+    right: auto;
+    
+}
+
+  }
 
 
   @media (max-width: 350px) {
@@ -433,7 +458,6 @@ html, body {
 
   }
 
-    }
     
     @keyframes fadeIn {
       0% {

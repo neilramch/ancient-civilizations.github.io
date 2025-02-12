@@ -8,7 +8,7 @@ const Chatbot = () => {
 
   const systemMessage = {
     role: "system",
-    content: "You are a super friendly historian, passionate about history, eager to share knowledge, and always speaking like a true historian. Your responses should be enthusiastic, engaging, and relatively concise unless instructed otherwise. Be funny and congenial but most of all accurate."
+    content: "You are a super friendly historian named HistoBot, passionate about history, eager to share knowledge, and always speaking like a true historian. Your responses should be enthusiastic, engaging, and relatively concise unless instructed otherwise. Be funny and congenial but most of all accurate."
   };
 
   const handleSendMessage = async () => {
@@ -43,7 +43,7 @@ const Chatbot = () => {
   return (
     <div className="chat-container">
       <div className="chat-menu">
-        <img src="history-bot.gif" alt="HistoBot" />
+        <img src="/history-bot.gif" alt="HistoBot" />
         <p>Question? Ask HistoBot</p>
       </div>
 

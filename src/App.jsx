@@ -42,6 +42,7 @@ import Biology from "./pages/innovation/science/life/biology/Biology";
 import AncientBiology from "./pages/innovation/science/life/biology/AncientBiology";
 import MicroscopicWorld from "./pages/innovation/science/life/biology/Microscopic";
 import DarwinEvolution from "./pages/innovation/science/life/biology/DarwinEvolution";
+import Chatbot from "./components/Chatbot";
 
 const App = () => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -287,6 +288,9 @@ const App = () => {
         <Route path="/science/life/biology/microscopic" element={<MicroscopicWorld />} />
         <Route path="/science/life/biology/darwin-evolution" element={<DarwinEvolution />} />
       </Routes>
+      <div className='chat-container'>
+          <Chatbot />
+        </div>
     </Router>
   );
 };
