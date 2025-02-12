@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
+import DailyFact from '../components/DailyFact';
+import Chatbot from '../components/Chatbot';
 
 const Home = () => {
 
@@ -7,6 +9,10 @@ const Home = () => {
     <div>
 
       <div className='home-container'>
+
+        <div className='fact-container'>
+          <DailyFact />
+        </div>
         <div className='map-container'>
           <h1>Interactive Map</h1>
           <h3>(See how the globe looked throughout the ages)</h3>
@@ -18,6 +24,10 @@ const Home = () => {
           <img src='/ancient-timeline.svg'></img>
           <img src='/middle-timeline.svg'></img>
           <img src='/modern-timeline.svg'></img>
+        </div>
+
+        <div className='chat-container'>
+          <Chatbot />
         </div>
 
       </div>    

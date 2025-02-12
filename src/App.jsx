@@ -7,6 +7,41 @@ import "./App.css";
 import ScrollToTop from "./ScrollToTop";
 import { Link } from "react-router-dom";
 import Innovation from "./pages/innovation/Innovation";
+import Science from "./pages/innovation/science/Science";
+import Physical from "./pages/innovation/science/physical/Physical";
+import Physics from "./pages/innovation/science/physical/physics/Physics";
+import AncientPhysics from "./pages/innovation/science/physical/physics/AncientPhysics";
+import ClassicalPhysics from "./pages/innovation/science/physical/physics/ClassicalPhysics";
+import NineteenthCenturyPhysics from "./pages/innovation/science/physical/physics/NineteenthCenturyPhysics";
+import QuantumRevolution from "./pages/innovation/science/physical/physics/Quantum";
+import RelativityModernPhysics from "./pages/innovation/science/physical/physics/RelativityModernPhysics";
+import FuturePhysics from "./pages/innovation/science/physical/physics/FuturePhysics";
+import Chemistry from "./pages/innovation/science/physical/chemistry/Chemistry";
+import Alchemy from "./pages/innovation/science/physical/chemistry/Alchemy";
+import ModernChemistry from "./pages/innovation/science/physical/chemistry/ModernChemistry";
+import PeriodicTable from "./pages/innovation/science/physical/chemistry/Periodic";
+import AtomicTheory from "./pages/innovation/science/physical/chemistry/AtomicTheory";
+import OrganicChemistry from "./pages/innovation/science/physical/chemistry/OrganicChemistry";
+import FutureChemistry from "./pages/innovation/science/physical/chemistry/FutureChemistry";
+import Astronomy from "./pages/innovation/science/physical/astronomy/Astronomy";
+import AncientStargazing from "./pages/innovation/science/physical/astronomy/AncientStargazing";
+import Einstein from "./pages/innovation/science/physical/astronomy/Einstein";
+import CopernicanRevolution from "./pages/innovation/science/physical/astronomy/CopernicanRevolution";
+import AgeOfTelescopes from "./pages/innovation/science/physical/astronomy/Telescopes";
+import SpaceAge from "./pages/innovation/science/physical/astronomy/SpaceAge";
+import FutureAstronomy from "./pages/innovation/science/physical/astronomy/FutureAstronomy";
+import EarthSciences from "./pages/innovation/science/physical/earth/Earth";
+import AncientGeology from "./pages/innovation/science/physical/earth/AncientGeology";
+import AgeOfExploration from "./pages/innovation/science/physical/earth/Exploration";
+import ModernGeology from "./pages/innovation/science/physical/earth/ModernGeology";
+import PlateTectonics from "./pages/innovation/science/physical/earth/PlateTectonics";
+import ClimateScience from "./pages/innovation/science/physical/earth/Climate";
+import FutureEarthSciences from "./pages/innovation/science/physical/earth/FutureEarth";
+import Life from "./pages/innovation/science/life/LifeScience";
+import Biology from "./pages/innovation/science/life/biology/Biology";
+import AncientBiology from "./pages/innovation/science/life/biology/AncientBiology";
+import MicroscopicWorld from "./pages/innovation/science/life/biology/Microscopic";
+import DarwinEvolution from "./pages/innovation/science/life/biology/DarwinEvolution";
 
 const App = () => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -216,6 +251,41 @@ const App = () => {
         <Route path="/region/:regionName" element={<Region />} /> {/* Dynamic region route */}
         <Route path="/region/:regionName/:warName" element={<Region />} />
         <Route path="/innovation" element={<Innovation />} />
+        <Route path="/science" element={<Science />} />
+        <Route path="/science/physical" element={<Physical />} />
+        <Route path="/science/physical/physics" element={<Physics />} />
+        <Route path="/science/physical/physics/ancient" element={<AncientPhysics />} />
+        <Route path="/science/physical/physics/classical" element={<ClassicalPhysics />} />
+        <Route path="/science/physical/physics/nineteenth-century" element={<NineteenthCenturyPhysics />} />
+        <Route path="/science/physical/physics/quantum-revolution" element={<QuantumRevolution />} />
+        <Route path="/science/physical/physics/modern" element={<RelativityModernPhysics />} />
+        <Route path="/science/physical/physics/future" element={<FuturePhysics/>} />
+        <Route path="/science/physical/chemistry" element={<Chemistry />} />
+        <Route path="/science/physical/chemistry/alchemy" element={<Alchemy />} />
+        <Route path="/science/physical/chemistry/modern" element={<ModernChemistry />} />
+        <Route path="/science/physical/chemistry/periodic-table" element={<PeriodicTable />} />
+        <Route path="/science/physical/chemistry/atomic-theory" element={<AtomicTheory />} />
+        <Route path="/science/physical/chemistry/organic" element={<OrganicChemistry />} />
+        <Route path="/science/physical/chemistry/future" element={<FutureChemistry />} />
+        <Route path="/science/physical/astronomy" element={<Astronomy />} />
+        <Route path="/science/physical/astronomy/ancient-stargazing" element={<AncientStargazing />} />
+        <Route path="/science/physical/astronomy/einstein" element={<Einstein />} />
+        <Route path="/science/physical/astronomy/copernican-revolution" element={<CopernicanRevolution />} />
+        <Route path="/science/physical/astronomy/telescopes" element={<AgeOfTelescopes />} />
+        <Route path="/science/physical/astronomy/space-age" element={<SpaceAge />} />
+        <Route path="/science/physical/astronomy/future" element={<FutureAstronomy />} />
+        <Route path="/science/physical/earth" element={<EarthSciences />} />
+        <Route path="/science/physical/earth/ancient" element={<AncientGeology />} />
+        <Route path="/science/physical/earth/exploration" element={<AgeOfExploration />} />
+        <Route path="/science/physical/earth/modern" element={<ModernGeology />} />
+        <Route path="/science/physical/earth/platetectonics" element={<PlateTectonics />} />
+        <Route path="/science/physical/earth/climate" element={<ClimateScience />} />
+        <Route path="/science/physical/earth/future" element={<FutureEarthSciences />} />
+        <Route path="/science/life" element={<Life />} />
+        <Route path="/science/life/biology" element={<Biology />} />
+        <Route path="/science/life/biology/ancient" element={<AncientBiology />} />
+        <Route path="/science/life/biology/microscopic" element={<MicroscopicWorld />} />
+        <Route path="/science/life/biology/darwin-evolution" element={<DarwinEvolution />} />
       </Routes>
     </Router>
   );

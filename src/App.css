@@ -240,6 +240,7 @@ html, body {
   z-index: 1000;
   min-height: 300px;
   width: 250px; /* Ensure consistent width */
+  min-height: 350px;
   white-space: nowrap; /* Prevent items from wrapping */
 }
 

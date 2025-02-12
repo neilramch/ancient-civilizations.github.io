@@ -1,0 +1,97 @@
+/* AncientPhysics.css */
+
+/* General Container Styling */
+.quantum-revolution-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Header Styling */
+  .quantum-revolution-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .quantum-revolution-header h1 {
+    font-size: 2.5rem;
+    color: #2a2a2a;
+  }
+  
+  .quantum-revolution-header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Main Content Styling */
+  .quantum-revolution-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .topic {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f9f9f9;
+  }
+
+  .topic img {
+    max-width: 60%;
+    height: auto;
+    align-self: center;
+  }
+  
+  .topic h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .topic p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .topic ul {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+  
+  .topic ul li {
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  /* Footer Styling */
+  .quantum-revolution-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #007BFF;
+    text-decoration: none;
+    border: 1px solid #007BFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .back-link:hover {
+    background-color: #007BFF;
+    color: white;
+  }
+  

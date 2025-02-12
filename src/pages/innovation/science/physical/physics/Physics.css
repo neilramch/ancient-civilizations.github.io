@@ -1,0 +1,66 @@
+/* Physics.css */
+
+/* Container Styling */
+.physics-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header Styling */
+  .physics-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .physics-header h1 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 10px;
+  }
+  
+  .physics-header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Main Content Styling */
+  .physics-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .physics-main img {
+    height: 150px;
+  }
+  
+  /* Footer Styling */
+  .physics-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #007BFF;
+    text-decoration: none;
+    border: 1px solid #007BFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .back-link:hover {
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+  }
+  

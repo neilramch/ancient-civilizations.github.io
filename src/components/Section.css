@@ -1,0 +1,79 @@
+/* Section.css */
+
+/* Container styling */
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .section-container h2 {
+    color: black;
+    font-weight: 200;
+  }
+
+  .section-container h3 {
+    color: black;
+    font-weight: 200;
+
+  }
+  
+  /* Hover effect for the section */
+  .section-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title styling */
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Description styling */
+  .section-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    width: auto;
+    height: 100px;
+  }
+  
+  /* Link button styling */
+  .section-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #007BFF;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-self: center;
+    margin-top: 25px;
+  }
+  
+  .section-link:hover {
+    color: #fff;
+    background-color: #007BFF;
+    text-decoration: none;
+  }
+
+  .section-container img {
+    height: 100px;
+    width: auto;
+    align-self: center;
+    border-radius: 33%;
+    margin-top: 20px;
+  }
+  

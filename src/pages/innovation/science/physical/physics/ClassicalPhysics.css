@@ -1,0 +1,131 @@
+/* ClassicalPhysics.css */
+
+/* General Container Styling */
+.classical-physics-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Header Styling */
+  .classical-physics-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .classical-physics-header h1 {
+    font-size: 2.5rem;
+    color: #2a2a2a;
+  }
+  
+  .classical-physics-header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Main Content Styling */
+  .classical-physics-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .topic {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    width: 100%;
+  }
+  
+  .topic h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .topic p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .topic ul {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+  
+  .topic ul li {
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .section-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  /* Footer Styling */
+  .classical-physics-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #007BFF;
+    text-decoration: none;
+    border: 1px solid #007BFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .back-link:hover {
+    background-color: #007BFF;
+    color: white;
+  }
+
+  /* Expand/Collapse Button Styling */
+.expand-button {
+  display: flex;
+  background-color: #00244b; /* Primary button color */
+  color: white; /* Text color */
+  font-size: 1rem; /* Adjust font size */
+  font-family: 'Arial', sans-serif; /* Use a clean font */
+  padding: 10px 15px; /* Padding for a comfortable click area */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover Effect */
+.expand-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Active/Pressed Effect */
+.expand-button:active {
+  background-color: #003f7f; /* Even darker shade when pressed */
+  transform: translateY(0); /* Reset lift effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduce shadow depth */
+}
+
+/* Expanded State (Optional) */
+.expand-button.expanded {
+  background-color: #28A745; /* Green to indicate expanded state */
+}
+
+  
