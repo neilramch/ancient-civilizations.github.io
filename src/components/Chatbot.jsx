@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import OpenAI from "openai";
 import './Chatbot.css';
-require('dotenv').config();
-const apiKey = process.env.OPENAI_API_KEY;
-
-const openai = new OpenAI({ 
-  apiKey: apiKey, 
-  dangerouslyAllowBrowser: true 
-});
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -27,12 +19,13 @@ const Chatbot = () => {
     setInput("");
 
     try {
-      const completion = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
-        messages: [systemMessage, ...messages, userMessage],
+      const response = await fetch("https://histopedia-backend.onrender.com/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: [systemMessage, ...messages, userMessage] }),
       });
 
-      const botMessage = completion.choices[0].message;
+      const botMessage = await response.json();
       setMessages([...messages, userMessage, botMessage]);
     } catch (error) {
       console.error("Error fetching response:", error);
@@ -50,14 +43,14 @@ const Chatbot = () => {
   return (
     <div className="chat-container">
       <div className="chat-menu">
-        <img src="history-bot.gif" />
+        <img src="history-bot.gif" alt="HistoBot" />
         <p>Question? Ask HistoBot</p>
       </div>
 
-    <div className="chat-contents">
+      <div className="chat-contents">
         <div className="chat-header">
           <h2>HistoBot</h2>
-          <img src="/history-bot.gif" />
+          <img src="/history-bot.gif" alt="HistoBot" />
         </div>
 
         <div className="chat-box">
