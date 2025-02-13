@@ -148,6 +148,14 @@
       max-height: min-content;
     }
 
+    .chat-container img {
+      max-width: 50px;
+    }
+
+    .chat-container h2 {
+      font-size: .75em;
+    }
+
     .send-button {
       width: min-content;
       font-size: .5em;
@@ -161,11 +169,19 @@
     }
 
     .chat-box {
-      max-width: auto;
+      max-width: 70svw;
+    }
+    .user-message {
+      font-size: .5em;
+    }
+
+    .chat-message {
+      font-size: .5em;
     }
 
     .chat-contents { 
         display: none;
+        font-size: .5em;
     }
 
     .chat-container:hover .chat-contents {
