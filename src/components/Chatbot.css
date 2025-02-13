@@ -1,4 +1,9 @@
 /* Chatbot Container */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .chat-container {
     max-width: 600px;
     margin: auto;
@@ -15,13 +20,15 @@
   }
 
   .chat-menu img {
-    height: 10svh;
+    height: 7svh;
     width: auto;
   }
 
   .chat-menu p {
-    font-size: .5em;
-    color: black;
+    font-size: .6em;
+    color: rgb(0, 0, 80);
+    text-wrap: nowrap;
+    text-align: center;
   }
   
   /* Header */
@@ -132,13 +139,29 @@
 
     .chat-menu {
       max-width: 100px;
-      height: auto;
+      height: min-content;
       place-items: center;
     }
 
     .chat-container {
       max-width: min-content;
       max-height: min-content;
+    }
+
+    .send-button {
+      width: min-content;
+      font-size: .5em;
+      height: min-content;
+    }
+
+    .input-box {
+      height: min-content;
+      width: min-content;
+      font-size: .5em;
+    }
+
+    .chat-box {
+      max-width: auto;
     }
 
     .chat-contents { 

@@ -43,8 +43,9 @@ const Chatbot = () => {
   return (
     <div className="chat-container">
       <div className="chat-menu">
+      <p>Question?</p>
         <img src="/history-bot.gif" alt="HistoBot" />
-        <p>Question? Ask HistoBot</p>
+        <p>Ask HistoBot!</p>
       </div>
 
       <div className="chat-contents">
