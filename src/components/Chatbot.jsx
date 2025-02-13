@@ -72,7 +72,7 @@ const Chatbot = () => {
             placeholder="Ask me about history..."
           />
           <button className="send-button" onClick={handleSendMessage} disabled={loading}>
-            {loading ? "Loading..." : "Send"}
+            {loading ? "..." : "Send"}
           </button>
         </div>
       </div>
