@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
 import DailyFact from '../components/DailyFact';
+import News from '../components/News';
 
 const Home = () => {
 
@@ -8,9 +9,13 @@ const Home = () => {
     <div>
 
       <div className='home-container'>
-
+      <div className='widgets-container'>
         <div className='fact-container'>
           <DailyFact />
+        </div>
+        <div className='news-container'>
+          <News />
+        </div>
         </div>
         <div className='map-container'>
           <h1>Interactive Map</h1>
