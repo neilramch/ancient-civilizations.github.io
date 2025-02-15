@@ -12,13 +12,33 @@ body {
 }
 
 .widgets-container {
+    position: relative;
     display: flex;
     gap: 20px;
     width: 100%;
+    height: 70svh; /* Adjust as needed */
     align-items: center;
     padding: 20px;
     justify-content: space-evenly;
+    overflow: hidden;
 }
+
+.widgets-container {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .draggable-widget {
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: grab;
+  }
+  
+  .draggable-widget:active {
+    cursor: grabbing;
+  }
+  
 
 .fact-container {
     max-width: 50% ;

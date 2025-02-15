@@ -59,6 +59,9 @@
   "react-dom": "^18.3.1",
   
     
+  "react-draggable": "^4.4.6",
+  
+    
   "react-router-dom": "^6.28.0"
   
   },
