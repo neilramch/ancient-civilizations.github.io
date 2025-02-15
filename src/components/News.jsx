@@ -12,7 +12,7 @@ const News = () => {
     console.log("📰 Fetching news...");
 
     try {
-      const response = await fetch("https://histopedia-backend.onrender.com/api/chat", {
+      const response = await fetch("https://histopedia-backend.onrender.com/api/news", {
         method: "GET",
         headers: { "Content-Type": "application/json" }
       });
