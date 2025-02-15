@@ -5,7 +5,7 @@ const News = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://histopedia-backend.onrender.com";
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://histopedia-backend.onrender.com";
 
   const fetchNews = async () => {
     setLoading(true);
