@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./DailyFact.css"; //
 
 const DailyFact = () => {
   // Predefined list of dates and facts
@@ -273,42 +274,13 @@ const DailyFact = () => {
   }, []);
 
   return (
-    <div style={styles.container}>
-      <h2 style={styles.heading}>📜 Today in History</h2>
-      <p style={styles.fact}>{factData.fact}</p>
-      {factData.image && <img src={factData.image} alt="Historical Event" style={styles.image} />}
+    <div className="daily-fact-container">
+      <h2 className="daily-fact-heading">📜 Today in History</h2>
+      <p className="daily-fact-text">{factData.fact}</p>
+      {factData.image && <img src={factData.image} alt="Historical Event" className="daily-fact-image" />}
     </div>
   );
 };
 
-const styles = {
-  container: {
-    padding: "20px",
-    background: "#f9f9f9",
-    borderRadius: "8px",
-    textAlign: "center",
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-    width: "100%",
-    margin: "20px auto",
-    fontFamily: "Arial, sans-serif",
-    height: "50svh",
-  },
-  heading: {
-    fontSize: "24px",
-    color: "#333",
-    marginBottom: "10px",
-  },
-  fact: {
-    fontSize: "18px",
-    color: "#555",
-  },
-  image: {
-    marginTop: "15px",
-    width: "auto",
-    maxHeight: "38svh",
-    borderRadius: "8px",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-  },
-};
 
 export default DailyFact;

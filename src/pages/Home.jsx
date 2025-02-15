@@ -10,10 +10,10 @@ const Home = () => {
 
       <div className='home-container'>
       <div className='widgets-container'>
-        <div className='fact-container'>
+        <div className='widget fact-container'>
           <DailyFact />
         </div>
-        <div className='news-container'>
+        <div className='widget news-container'>
           <News />
         </div>
         </div>

@@ -27,17 +27,17 @@ body {
     flex-wrap: wrap; /* Ensure it wraps if needed */
 }
 
-.fact-container {
+.widget.fact-container {
     width: 100%; /* Allow full width for mobile */
     max-width: 400px; /* Prevent it from getting too large */
     height: auto;
 }
 
 /* News Widget */
-.news-container {
-    width: 100%;
+.widget.news-container {
     margin: 0;
     padding: 0;
+    width: min-content;
 }
 
 /* Ensure images maintain aspect ratio */
@@ -92,7 +92,7 @@ body {
         gap: 10px;
     }
 
-    .fact-container, .news-container {
+    .widget.fact-container, .widget.news-container {
         width: 90%; /* Slight padding on mobile */
     }
 
