@@ -12,28 +12,22 @@ body {
 }
 
 .widgets-container {
-    position: relative;
     display: flex;
     gap: 20px;
     width: 100%;
-    height: 70svh; /* Adjust as needed */
     align-items: center;
     padding: 20px;
     justify-content: space-evenly;
-    overflow: hidden;
 }
 
-  
-  .draggable-widget {
-    position: absolute;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: grab;
-  }
-  
 .fact-container {
     max-width: 50% ;
     height: auto;
+}
+
+.news-container {
+    margin: 0;
+    padding: 0;
 }
 
 .home-container img {
@@ -52,6 +46,7 @@ body {
 }
 
 .map-container iframe {
+    width: 90%;
     height: 80svh;
 }
 
