@@ -5,95 +5,105 @@ const News = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
 
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://histopedia-backend.onrender.com";
+  const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || "https://histopedia-backend.onrender.com";
 
-const fetchNews = async () => {
+  const fetchNews = async () => {
     setLoading(true);
     console.log("📰 Fetching news...");
-  
+
     try {
-      const response = await fetch(`${API_BASE_URL}/api/news`, {
+      const response = await fetch("http://localhost:5001/api/news", {
         method: "GET",
         headers: { "Content-Type": "application/json" }
       });
-  
+
       if (!response.ok) {
         throw new Error(`❌ HTTP error! Status: ${response.status}`);
       }
-  
+
       const newsData = await response.json();
-      console.log("✅ Fetched News Data:", newsData);
-  
-      if (!Array.isArray(newsData) || newsData.length === 0) {
-        console.error("❌ No articles received from backend.");
+      console.log("✅ Fetched News Data (Frontend):", newsData); // 🚨 Debugging log
+
+      if (Array.isArray(newsData) && newsData.length > 0) {
+        setArticles(newsData); // ✅ Set articles only if it's an array
+      } else {
+        console.error("❌ No valid articles received from backend.");
       }
-  
-      setArticles(newsData);
     } catch (error) {
       console.error("❌ Error fetching news:", error);
     }
-  
+
     setLoading(false);
-  };
-  
+};
+
 
   // 🔹 Fetch news automatically when component loads
   useEffect(() => {
     fetchNews();
   }, []);
 
+  const fetchRandomArticles = () => {
+    // Only shuffle if there are at least 5 articles
+    if (articles.length >= 5) {
+      const shuffled = [...articles].sort(() => 0.5 - Math.random()); // Shuffle array
+      setArticles(shuffled.slice(0, 5)); // Select first 5 items
+    } else {
+      console.log("❌ Not enough articles to shuffle, fetching new data...");
+      fetchNews(); // If there aren't enough articles, fetch more from the API
+    }
+  };
+
   return (
     <div className="news-container">
-      <div className="news-menu">
-
-      </div>
-
-      <div className="news-contents">
-        <div className="news-header">
-          <h2>Latest Historical & Archaeological News</h2>
-        </div>
-
-        <div className="news-box">
-  {loading ? (
-    <p>Loading latest findings...</p>
-  ) : (
-    articles.length > 0 ? (
-      articles.map((article, index) => (
-        <div key={index} className="news-article">
-          {/* ✅ Add Image Thumbnail */}
-          {article.thumbnail && (
-            <img src={article.thumbnail} alt="News Thumbnail" className="news-thumbnail" />
-          )}
-
-          {/* ✅ Show Title with Clickable Link */}
-          <a href={article.link} target="_blank" rel="noopener noreferrer">
-            <b>{article.title}</b>
-          </a>
-
-          {/* ✅ Show Source, Date, and Author */}
-          <p>
-            {article.source.name} 
-            {article.author?.name && ` • By ${article.author.name}`} 
-            • {article.date ? new Date(article.date).toLocaleDateString() : "Unknown Date"}
-            </p>
-
-        </div>
-      ))
-    ) : (
-      <p>No articles found. Try refreshing.</p>
-    )
-  )}
-</div>
-
-
-        <div className="news-footer">
-          <button className="refresh-button" onClick={fetchNews} disabled={loading}>
-            {loading ? "Refreshing..." : "Refresh News"}
-          </button>
-        </div>
-      </div>
+    <div className="news-header">
+      <h2>Latest Historical & Archaeological News</h2>
+      <button className="random-button" onClick={fetchRandomArticles}>
+        Shuffle
+      </button>
     </div>
+  
+    <div className="news-box">
+      {loading ? (
+        <p>Loading latest findings...</p>
+      ) : articles.length > 0 ? (
+        articles.map((article, index) => (
+          <div key={index} className="news-article">
+            {/* ✅ Display Thumbnail */}
+            {article.urlToImage ? (
+              <img src={article.urlToImage} alt="News Thumbnail" className="news-thumbnail" />
+            ) : (
+              <p>No image available</p>
+            )}
+  
+            {/* ✅ Article Content */}
+            <div>
+              <a href={article.url} target="_blank" rel="noopener noreferrer">
+                {article.title}
+              </a>
+              <p>
+                <strong>{article.source?.name || "Unknown Source"}</strong>
+                {article.author ? ` • By ${article.author}` : ""}
+                {article.publishedAt
+                  ? ` • ${new Date(article.publishedAt).toLocaleDateString()}`
+                  : " • Date Unknown"}
+              </p>
+            </div>
+          </div>
+        ))
+      ) : (
+        <p>No articles found. Try refreshing.</p>
+      )}
+    </div>
+  
+    <div className="news-footer">
+      <button className="refresh-button" onClick={fetchNews} disabled={loading}>
+        {loading ? "Refreshing..." : "Refresh News"}
+      </button>
+    </div>
+  </div>
+  
   );
+  
 };
 
 export default News;

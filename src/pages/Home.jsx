@@ -5,6 +5,8 @@ import DailyFact from '../components/DailyFact';
 import News from '../components/News';
 
 const Home = () => {
+
+  
   return (
     <div>
       <div className='home-container'>
@@ -18,7 +20,7 @@ const Home = () => {
           </Draggable>
 
           {/* News Widget - Draggable */}
-          <Draggable bounds=".widgets-container"  defaultPosition={{ x: 400, y: 50 }} >
+          <Draggable bounds=".widgets-container"  defaultPosition={{ x: 400, y: 50 }}  cancel="a"  >
             <div className='news-container draggable-widget'>
               <News />
             </div>

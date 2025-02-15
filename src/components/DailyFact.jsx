@@ -291,6 +291,7 @@ const styles = {
     width: "100%",
     margin: "20px auto",
     fontFamily: "Arial, sans-serif",
+    height: "50svh",
   },
   heading: {
     fontSize: "24px",
@@ -304,7 +305,7 @@ const styles = {
   image: {
     marginTop: "15px",
     width: "auto",
-    maxHeight: "40svh",
+    maxHeight: "38svh",
     borderRadius: "8px",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
   },
