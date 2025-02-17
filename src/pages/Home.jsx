@@ -18,7 +18,7 @@ const Home = () => {
         </div>
         </div>
         <div className='map-container'>
-          <h1>Interactive Map</h1>
+          <h1>Interactive World Map</h1>
           <h3>(See how the globe looked throughout the ages)</h3>
           <iframe className='interactive-map' src="https://www.runningreality.org/?lesson=none&key=FREEACCESS" referrerolicy="origin">Running Reality</iframe>
           <p>via <a href='https://www.runningreality.org/' target="_blank">The Running Reality Organization</a></p>

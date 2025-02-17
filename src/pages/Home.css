@@ -38,13 +38,13 @@ body {
     margin: 0;
     padding: 0;
     width: min-content;
+    max-height: 400px;
 }
 
 /* Ensure images maintain aspect ratio */
 .home-container img {
     width: 100%;
     height: auto;
-    object-fit: cover;
 }
 
 /* Map Container */
@@ -61,20 +61,22 @@ body {
 .map-container iframe {
     width: 90%;
     min-height: 75vh; /* Adjust for mobile height */
+    border-radius: 10px;
 }
 
 .map-container h1, .map-container h3, .map-container p {
     font-family: "Nunito Sans", sans-serif;
     text-align: center;
     margin: 0;
-    padding: 5px;
+    padding: 0;
+    font-weight: 200;
+
 }
 
 /* Timeline Section */
 .timelines {
     display: flex;
-    width: 100%;
-    flex-wrap: wrap; /* Allows it to break into a new line */
+    max-width: 100svw;
     justify-content: center;
 }
 
@@ -85,15 +87,15 @@ body {
 }
 
 /* 📱 Responsive Mobile Styles */
-@media (max-width: 968px) {
+@media (max-width: 1080px) {
     .widgets-container {
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 
-    .widget.fact-container, .widget.news-container {
-        width: 90%; /* Slight padding on mobile */
+    .widget.news-container {
+        width: 100%;
     }
 
     .map-container iframe {

@@ -18,10 +18,11 @@
   .chat-menu {
     display: flex;
     flex-direction: column;
+    height: min-content;
   }
 
   .chat-menu img {
-    height: 7svh;
+    height: 6svh;
     width: auto;
   }
 

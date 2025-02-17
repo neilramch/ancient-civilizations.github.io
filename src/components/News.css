@@ -1,6 +1,6 @@
 /* News Widget Container */
 .news-container {
-    width: 30vw; /* Default width for larger screens */
+    width: 100%; /* Default width for larger screens */
     max-height: 50svh;
     padding: 15px;
     background: #f9f9f9;
@@ -10,18 +10,17 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    font-family: "Arial", sans-serif;
 }
 
 /* News Header */
 .news-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .news-header h2 {
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 200;
     margin: 0;
     color: #333;
@@ -68,6 +67,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
     overflow: hidden;
+    width: 100%;
 }
 
 .news-article:hover {
