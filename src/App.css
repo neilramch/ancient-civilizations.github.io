@@ -206,7 +206,6 @@ html, body {
   display: flex; /* Show the dropdown menu on hover */
   flex-direction: column;
 }
-
 .dropdown-item {
   display: flex;
   gap: 5px;
@@ -337,11 +336,12 @@ html, body {
 
   .dropdown-menu:hover .dropdown {
     display: block; /* Show dropdown on hover */
+    transform: translateY(100px);
   }
 
   .dropdown:hover .dropdown-item:not(:hover) {
-    height: 20px;
-    font-size: .5em;
+    height: 25px;
+    font-size: .75em;
   }
 
   /* Submenu */

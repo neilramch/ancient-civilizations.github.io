@@ -155,6 +155,25 @@ const App = () => {
     return name.replace(/([A-Z])/g, " $1").trim(); // Inserts space before uppercase letters
   };
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+    const menuButton = document.querySelector(".menu-button");
+    const dropdown = document.querySelector(".dropdown");
+  
+    // Toggle dropdown on click
+    menuButton.addEventListener("click", (event) => {
+      event.stopPropagation(); // Prevent click from bubbling to document
+      dropdownMenu.classList.toggle("active");
+    });
+  
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (event) => {
+      if (!dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.remove("active");
+      }
+    });
+  });
+  
   return (
     <Router basename="/">
       <header className="header">

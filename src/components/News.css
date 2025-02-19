@@ -17,6 +17,10 @@
 .news-header {
     margin-bottom: 10px;
     width: 100%;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .news-header h2 {
@@ -27,6 +31,10 @@
     text-align: center;
 }
 
+.news-header img {
+    height: 50px;
+    width: 50px;
+}
 /* Buttons */
 .random-button,
 .refresh-button {

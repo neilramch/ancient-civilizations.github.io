@@ -126,19 +126,19 @@ const DailyFact = () => {
 },
 "02-18": {
   "fact": "On this day in 1930, Pluto was discovered by astronomer Clyde Tombaugh.",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Pluto-01_Stern_03_Pluto_Color_TXT.jpg"
+  "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Clyde_W._Tombaugh.jpeg"
 },
 "02-19": {
   "fact": "On this day in 1945, U.S. Marines landed on Iwo Jima during World War II.",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Raising_the_Flag_on_Iwo_Jima%2C_large.jpg"
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Raising_the_Flag_on_Iwo_Jima%2C_larger_-_edit1.jpg/2560px-Raising_the_Flag_on_Iwo_Jima%2C_larger_-_edit1.jpg"
 },
 "02-20": {
   "fact": "On this day in 1962, John Glenn became the first American to orbit the Earth.",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/JohnGlenn1962.jpg"
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPN-2000-001027.jpg/1280px-GPN-2000-001027.jpg"
 },
 "02-21": {
   "fact": "On this day in 1965, Malcolm X was assassinated in New York City.",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Malcolm_X_NYWTS_2a.jpg"
+  "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Malcolm_X_on_stretcher.jpg"
 },
 "02-22": {
   "fact": "On this day in 1732, George Washington, the first president of the United States, was born.",

@@ -56,7 +56,8 @@ const News = () => {
   return (
     <div className="news-container">
     <div className="news-header">
-      <h2>Latest Historical & Archaeological News</h2>
+      <img width="100" height="100" src="https://img.icons8.com/stickers/100/news--v1.png" alt="news--v1"/>
+      <h2>Latest Historical News</h2>
       <button className="random-button" onClick={fetchRandomArticles}>
         Shuffle
       </button>
